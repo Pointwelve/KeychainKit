@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,89 +14,78 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E8A6666E1A844E4100287CA3"
-               BuildableName = "SSKeychain.framework"
-               BlueprintName = "SSKeychain Mac"
-               ReferencedContainer = "container:SSKeychain.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E8A666781A844E4100287CA3"
-               BuildableName = "SSKeychain Mac Tests.xctest"
-               BlueprintName = "SSKeychain Mac Tests"
-               ReferencedContainer = "container:SSKeychain.xcodeproj">
+               BlueprintIdentifier = "6DB08F721B5F90AE00A4D26E"
+               BuildableName = "KeychainKit.framework"
+               BlueprintName = "KeychainKit"
+               ReferencedContainer = "container:KeychainKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E8A666781A844E4100287CA3"
-               BuildableName = "SSKeychain Mac Tests.xctest"
-               BlueprintName = "SSKeychain Mac Tests"
-               ReferencedContainer = "container:SSKeychain.xcodeproj">
+               BlueprintIdentifier = "6DB08F7C1B5F90AE00A4D26E"
+               BuildableName = "KeychainKitTests.xctest"
+               BlueprintName = "KeychainKitTests"
+               ReferencedContainer = "container:KeychainKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E8A6666E1A844E4100287CA3"
-            BuildableName = "SSKeychain.framework"
-            BlueprintName = "SSKeychain Mac"
-            ReferencedContainer = "container:SSKeychain.xcodeproj">
+            BlueprintIdentifier = "6DB08F721B5F90AE00A4D26E"
+            BuildableName = "KeychainKit.framework"
+            BlueprintName = "KeychainKit"
+            ReferencedContainer = "container:KeychainKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E8A6666E1A844E4100287CA3"
-            BuildableName = "SSKeychain.framework"
-            BlueprintName = "SSKeychain Mac"
-            ReferencedContainer = "container:SSKeychain.xcodeproj">
+            BlueprintIdentifier = "6DB08F721B5F90AE00A4D26E"
+            BuildableName = "KeychainKit.framework"
+            BlueprintName = "KeychainKit"
+            ReferencedContainer = "container:KeychainKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E8A6666E1A844E4100287CA3"
-            BuildableName = "SSKeychain.framework"
-            BlueprintName = "SSKeychain Mac"
-            ReferencedContainer = "container:SSKeychain.xcodeproj">
+            BlueprintIdentifier = "6DB08F721B5F90AE00A4D26E"
+            BuildableName = "KeychainKit.framework"
+            BlueprintName = "KeychainKit"
+            ReferencedContainer = "container:KeychainKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

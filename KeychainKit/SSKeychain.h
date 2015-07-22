@@ -6,7 +6,7 @@
 //  Copyright (c) 2010-2014 Sam Soffes. All rights reserved.
 //
 
-#import <SSKeychain/SSKeychainQuery.h>
+#import "SSKeychainQuery.h"
 
 /**
  Error code specific to SSKeychain that can be returned in NSError objects.
@@ -18,6 +18,7 @@ typedef NS_ENUM(OSStatus, SSKeychainErrorCode) {
 	SSKeychainErrorBadArguments = -1001,
 };
 
+NS_ASSUME_NONNULL_BEGIN
 /** SSKeychain error domain */
 extern NSString *const kSSKeychainErrorDomain;
 
@@ -48,7 +49,7 @@ extern NSString *const kSSKeychainLastModifiedKey;
 
 /** Where the item was created. */
 extern NSString *const kSSKeychainWhereKey;
-
+NS_ASSUME_NONNULL_END
 /**
  Simple wrapper for accessing accounts, getting passwords, setting passwords, and deleting passwords using the system
  Keychain on Mac OS X and iOS.
@@ -71,8 +72,9 @@ extern NSString *const kSSKeychainWhereKey;
  @return Returns a string containing the password for a given account and service, or `nil` if the Keychain doesn't
  have a password for the given parameters.
  */
-+ (NSString *)passwordForService:(NSString *)serviceName account:(NSString *)account;
-+ (NSString *)passwordForService:(NSString *)serviceName account:(NSString *)account error:(NSError **)error;
++ (nullable NSString *)passwordForService:(nonnull NSString *)serviceName
+                                  account:(nonnull NSString *)account
+                                    error:(NSError * __autoreleasing __null_unspecified * __null_unspecified)error;
 
 /**
  Returns a nsdata containing the password for a given account and service, or `nil` if the Keychain doesn't have a
@@ -85,8 +87,9 @@ extern NSString *const kSSKeychainWhereKey;
  @return Returns a nsdata containing the password for a given account and service, or `nil` if the Keychain doesn't
  have a password for the given parameters.
  */
-+ (NSData *)passwordDataForService:(NSString *)serviceName account:(NSString *)account;
-+ (NSData *)passwordDataForService:(NSString *)serviceName account:(NSString *)account error:(NSError **)error;
++ (nullable NSData *)passwordDataForService:(nonnull NSString *)serviceName
+                                    account:(nonnull NSString *)account
+                                      error:(NSError * __autoreleasing __null_unspecified * __null_unspecified)error;
 
 
 /**
@@ -98,8 +101,9 @@ extern NSString *const kSSKeychainWhereKey;
 
  @return Returns `YES` on success, or `NO` on failure.
  */
-+ (BOOL)deletePasswordForService:(NSString *)serviceName account:(NSString *)account;
-+ (BOOL)deletePasswordForService:(NSString *)serviceName account:(NSString *)account error:(NSError **)error;
++ (BOOL)deletePasswordForService:(nonnull NSString *)serviceName
+                         account:(nonnull NSString *)account
+                           error:(NSError * __autoreleasing __null_unspecified * __null_unspecified)error;
 
 
 /**
@@ -113,8 +117,11 @@ extern NSString *const kSSKeychainWhereKey;
 
  @return Returns `YES` on success, or `NO` on failure.
  */
-+ (BOOL)setPassword:(NSString *)password forService:(NSString *)serviceName account:(NSString *)account;
-+ (BOOL)setPassword:(NSString *)password forService:(NSString *)serviceName account:(NSString *)account error:(NSError **)error;
+
++ (BOOL)setPassword:(nonnull NSString *)password
+         forService:(nonnull NSString *)serviceName
+            account:(nonnull NSString *)account
+              error:(NSError * __autoreleasing __null_unspecified * __null_unspecified)error;
 
 /**
  Sets a password in the Keychain.
@@ -127,8 +134,10 @@ extern NSString *const kSSKeychainWhereKey;
 
  @return Returns `YES` on success, or `NO` on failure.
  */
-+ (BOOL)setPasswordData:(NSData *)password forService:(NSString *)serviceName account:(NSString *)account;
-+ (BOOL)setPasswordData:(NSData *)password forService:(NSString *)serviceName account:(NSString *)account error:(NSError **)error;
++ (BOOL)setPasswordData:(nonnull NSData *)password
+             forService:(nonnull NSString *)serviceName
+                account:(nonnull NSString *)account
+                  error:(NSError * __autoreleasing __null_unspecified * __null_unspecified)error;
 
 /**
  Returns an array containing the Keychain's accounts, or `nil` if the Keychain has no accounts.
@@ -139,8 +148,7 @@ extern NSString *const kSSKeychainWhereKey;
  @return An array of dictionaries containing the Keychain's accounts, or `nil` if the Keychain doesn't have any
  accounts. The order of the objects in the array isn't defined.
  */
-+ (NSArray *)allAccounts;
-+ (NSArray *)allAccounts:(NSError *__autoreleasing *)error;
++ (null_unspecified NSArray <NSDictionary *>*)allAccounts:(NSError * __autoreleasing __null_unspecified * __null_unspecified)error;
 
 
 /**
@@ -152,15 +160,14 @@ extern NSString *const kSSKeychainWhereKey;
 
  @param serviceName The service for which to return the corresponding accounts.
 
- @return An array of dictionaries containing the Keychain's accounts for a given `serviceName`, or `nil` if the Keychain
- doesn't have any accounts for the given `serviceName`. The order of the objects in the array isn't defined.
+ @return An array of dictionaries containing the Keychain's accounts for a given `serviceName`, or `nil` if the Keychain doesn't have any accounts for the given `serviceName`. The order of the objects in the array isn't defined.
  */
-+ (NSArray *)accountsForService:(NSString *)serviceName;
-+ (NSArray *)accountsForService:(NSString *)serviceName error:(NSError *__autoreleasing *)error;
+
++ (nullable NSArray <NSDictionary *>*)accountsForService:(nullable NSString *)serviceName
+                                           error:(NSError * __autoreleasing __null_unspecified * __null_unspecified)error;
 
 
 #pragma mark - Configuration
-
 #if __IPHONE_4_0 && TARGET_OS_IPHONE
 /**
  Returns the accessibility type for all future passwords saved to the Keychain.
@@ -172,7 +179,7 @@ extern NSString *const kSSKeychainWhereKey;
 
  @see setAccessibilityType
  */
-+ (CFTypeRef)accessibilityType;
++ (null_unspecified CFTypeRef)accessibilityType NS_AVAILABLE_IOS(4_0);
 
 /**
  Sets the accessibility type for all future passwords saved to the Keychain.
@@ -184,7 +191,7 @@ extern NSString *const kSSKeychainWhereKey;
 
  @see accessibilityType
  */
-+ (void)setAccessibilityType:(CFTypeRef)accessibilityType;
++ (void)setAccessibilityType:(null_unspecified CFTypeRef)accessibilityType NS_AVAILABLE_IOS(4_0);
 #endif
 
 @end

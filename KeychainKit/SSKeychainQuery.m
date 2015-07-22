@@ -58,7 +58,8 @@
 	if (status != errSecSuccess && error != NULL) {
 		*error = [[self class] errorWithCode:status];
 	}
-	return (status == errSecSuccess);}
+	return (status == errSecSuccess);
+}
 
 
 - (BOOL)deleteItem:(NSError *__autoreleasing *)error {
